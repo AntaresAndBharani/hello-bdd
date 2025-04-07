@@ -1,32 +1,22 @@
 from behave import given, when, then
-import backtrader as bt
-import datetime
-from trading.hello_world_strategy import HelloWorldStrategy
-import io
-import sys
-from contextlib import redirect_stdout
+import src.hello_world as hw
+from src.hello_world import HelloWorld
 
-@given(u'I have historical price data')
+@given(u'I have a working environment')
 def step_impl(context):
-    context.cerebro = bt.Cerebro()
-    context.data = bt.feeds.YahooFinanceData(dataname='data/AAPL.csv',
-                                             fromdate=datetime.datetime(2011, 1, 1),
-                                             todate=datetime.datetime(2012, 12, 31))
-    context.cerebro.adddata(context.data)
-    # Initialize output to an empty string to ensure it always exists.
-    context.output = ""
+    # Simply verify Python is working by setting a variable
+    context.environment_ready = True
 
-@when(u'I run the Hello World strategy')
+
+@when(u'I execute the Hello World program')
 def step_impl(context):
-    buffer = io.StringIO()
-    with redirect_stdout(buffer):
-        context.cerebro.addstrategy(HelloWorldStrategy)
-        context.cerebro.run()
-    context.output = buffer.getvalue()
+    # Import and call the HelloWorld class from the src folder
+    hello = HelloWorld()
+    context.output = hello.say_hello()
 
-@then(u'I should see a "Hello World" message in the output')
+@then(u'I should see a "Hello, World" message in the output')
 def step_impl(context):
     # Check if "Hello World" is in the captured output
-    assert "Hello World" in context.output, (
-        f"Expected 'Hello World' in output, but got:\n{context.output}"
+    assert "Hello, World" in context.output, (
+        f"Expected 'Hello, World' in output, but got:\n{context.output}"
     )

@@ -1,7 +1,7 @@
 # .coveragerc
 [run]
 # Measure coverage only for code under the "trading" package:
-source = trading
+source = src
 
 # Exclude some lines/patterns (optional)
 omit =

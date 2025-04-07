@@ -28,3 +28,7 @@ json.output
 # Mac / Linux / Windows system files
 .DS_Store
 Thumbs.db
+
+# Allure
+allure-report/
+allure-results/

@@ -1,9 +1,9 @@
-Feature: Hello World Backtrader Strategy
-  As a trader
-  I want to implement a simple Hello World strategy
-  So that I can verify my BDD setup works with backtrader
+Feature: Hello World Example
+  As a user
+  I want to run a simple Hello World example
+  So that I can verify my setup works
 
-  Scenario: Running Hello World strategy
-    Given I have historical price data
-    When I run the Hello World strategy
-    Then I should see a "Hello World" message in the output
+  Scenario: Running Hello World example
+    Given I have a working environment
+    When I execute the Hello World program
+    Then I should see a "Hello, World" message in the output
