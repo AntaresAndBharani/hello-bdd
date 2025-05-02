@@ -39,3 +39,22 @@ To add a logger to each class and method, follow these steps:
     ```
 
 This setup will ensure that log messages include the timestamp, module name, log level, method name, and the log message itself, and that logs are written to a file in the `logs` directory.
+
+## Instructions for Behavior-Driven Development (BDD) with Behave
+
+When developing new functionality or modifying existing code, follow these BDD practices:
+
+1.  **Source Code Location:**
+    *   All primary Python source code (classes, functions implementing the core logic) should reside within the `src` directory.
+
+2.  **Feature Files:**
+    *   For each new feature or significant piece of functionality developed in `src`, create a corresponding `.feature` file in the `features` directory.
+    *   Write scenarios using Gherkin syntax (Given, When, Then) to describe the expected behavior from a user's perspective.
+
+3.  **Step Definitions:**
+    *   For each `.feature` file, create a corresponding Python file for step definitions in the `features/steps` directory (e.g., `feature_name_steps.py`).
+    *   Implement the Python functions decorated with `@given`, `@when`, `@then` that match the steps defined in the `.feature` file.
+    *   These step definitions will often import and utilize the code from the `src` directory to execute the actions and verify the outcomes.
+
+4.  **Logging Requirement:**
+    *   Remember to apply the **Instructions for Adding Logger** (detailed above) to *all* classes created, both in the `src` directory and potentially within step definition files if complex state or logic is managed there. Ensure logger configuration and usage are implemented as specified.

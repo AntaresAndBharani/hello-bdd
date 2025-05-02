@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# backtrader-hello
-=======
 Backtrader Algorithmic Trading Project
 ========================================
 
@@ -129,7 +126,7 @@ source = trading
 
 [report]
 show_missing = True
-
+```
 
 Additional Resources
 --------------------
@@ -141,4 +138,3 @@ Additional Resources
 License
 -------
 MIT
->>>>>>> d088541 (Initial commit)
