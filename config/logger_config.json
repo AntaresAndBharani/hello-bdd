@@ -1,0 +1,10 @@
+{
+  "level": "INFO",
+  "format": "%(asctime)s - %(module)s.%(funcName)s - %(levelname)s - %(message)s",
+  "output": {
+    "console": true,
+    "file": true,
+    "path": "logs",
+    "filename": "hello-bdd.log"
+  }
+}
